@@ -1,0 +1,3 @@
+from .camiseta_schema import CamisetaSchema
+from .create_camiseta_schema import CreateCamisetaSchema
+from .update_camiseta_schema import UpdateCamisetaSchema

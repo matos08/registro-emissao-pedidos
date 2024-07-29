@@ -1,0 +1,3 @@
+from .pintura_schema import PinturaSchema
+from .create_pintura_schema import CreatePinturaSchema
+from .update_pintura_schema import UpdatePinturaSchema

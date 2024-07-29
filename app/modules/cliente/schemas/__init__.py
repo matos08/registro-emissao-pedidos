@@ -1,3 +1,3 @@
 from .cliente_schema import ClienteSchema
-from .create_cliente_shcema import CreateClienteSchema
+from .create_cliente_schema import CreateClienteSchema
 from .update_cliente_schema import UpdateClienteSchema
