@@ -30,7 +30,8 @@ class Settings(BaseSettings):
         "http://localhost:8080",
     ]
     MODELS: List = [
-
+        "aerich.models",
+        "app.modules.tam_camiseta.model",
     ]
 
 

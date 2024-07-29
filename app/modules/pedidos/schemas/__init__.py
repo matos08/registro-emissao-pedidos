@@ -1,0 +1,3 @@
+from .pedidos_schema import PedidosSchema
+from .create_pedidos_schema import CreatePedidosSchema
+from .update_pedidos_schema import UpdatePedidosSchema
