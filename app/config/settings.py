@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     ENVIRONMENT = config("ENVIRONMENT", default="local")
     TESTING = config("TESTING", default=False)
     APP_PORT = config("APP_PORT", default=8000, cast=int)
-    APP_ROOT_PATH = config("APP_ROOT_PATH", default="/")
+    APP_ROOT_PATH = config("APP_ROOT_PATH", default="")
     APP_NAME = config("APP_NAME", default="Registro e emissão de pedidos")
     APP_DESCRIPTION = config(
         "APP_DESCRIPTION",
@@ -31,7 +31,14 @@ class Settings(BaseSettings):
     ]
     MODELS: List = [
         "aerich.models",
-        "app.modules.tam_camiseta.model",
+        "app.modules.camiseta.model",
+        "app.modules.cliente.model",
+        "app.modules.cor.model",
+        "app.modules.orcamento.model",
+        "app.modules.pintura.model",
+        "app.modules.usuario.model",
+        "app.modules.pedidos.model",
+
     ]
 
 

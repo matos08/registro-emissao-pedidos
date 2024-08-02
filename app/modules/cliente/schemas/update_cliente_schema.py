@@ -2,7 +2,7 @@ from fastapi_camelcase import CamelModel
 
 
 class UpdateClienteSchema(CamelModel):
-    nome: str
+    name: str
     email: str
     address: str
     telephone: str

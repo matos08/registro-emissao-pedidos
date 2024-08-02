@@ -7,6 +7,15 @@ class PinturaModel(Model):
     img_url = fields.CharField(max_length=50)
     size_painting = fields.IntField
     value_colors = fields.FloatField
+    orcamento = fields.ForeignKeyField(
+        "models.OrcamentoModel",
+        "pintura",
+    )
+
+    cor = fields.ManyToManyField(model_name="models.CorModel",
+                                 through="cor_pintura",
+                                 related_name="pintura"
+                                 )
 
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
