@@ -5,10 +5,11 @@ from tortoise import fields
 class PedidosModel(Model):
     id = fields.BigIntField(pk=True)
     status = fields.CharField(max_length=50)
-    total_value = fields.CharField(max_length=50)
+    total_value = fields.FloatField()
+
     cliente = fields.ForeignKeyField(
-        "models.ClienteModel",
-        "pedidos",
+        model_name="models.ClienteModel",
+        related_name="pedidos",
     )
 
     created_at = fields.DatetimeField(auto_now_add=True)

@@ -1,10 +1,6 @@
 from datetime import datetime
-from typing import Optional
 
 from fastapi_camelcase import CamelModel
-
-from app.modules.cor.schemas import CorSchema
-from app.modules.orcamento.schemas import OrcamentoSchema
 
 
 class PinturaSchema(CamelModel):
@@ -16,8 +12,7 @@ class PinturaSchema(CamelModel):
     created_at: datetime
     updated_at: datetime
 
-    orcamento: Optional[OrcamentoSchema]
-    cor: Optional[CorSchema]
+    # cor: Optional[CorSchema]
 
     class Config:
         orm_mode = True

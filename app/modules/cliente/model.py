@@ -3,7 +3,7 @@ from tortoise import fields
 
 
 class ClienteModel(Model):
-    id = fields.BigIntField(pk=True,)
+    id = fields.BigIntField(pk=True)
     name = fields.CharField(max_length=50)
     email = fields.CharField(max_length=50)
     address = fields.CharField(max_length=50)

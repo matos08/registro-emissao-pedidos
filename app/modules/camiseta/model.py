@@ -8,10 +8,14 @@ class CamisetaModel(Model):
     type_cloth = fields.CharField(max_length=50)
     type_shirt = fields.CharField(max_length=50)
     color_cloth = fields.CharField(max_length=50)
+    quantity = fields.IntField(default=1)
+
     orcamento = fields.ForeignKeyField(
-        "models.OrcamentoModel",
-        "camiseta",
+        model_name="models.OrcamentoModel",
+        related_name="camiseta",
+        null=True
     )
+
     pintura = fields.ManyToManyField(model_name="models.PinturaModel",
                                      through="pintura_camiseta",
                                      related_name="camiseta"

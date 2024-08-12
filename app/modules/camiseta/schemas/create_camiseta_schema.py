@@ -6,3 +6,4 @@ class CreateCamisetaSchema(CamelModel):
     type_cloth: str
     type_shirt: str
     color_cloth: str
+    quantity: int

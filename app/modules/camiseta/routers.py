@@ -16,6 +16,16 @@ async def create_camiseta(payload: schemas.CreateCamisetaSchema):
     return result
 
 
+"""@router.post(
+    "/camiseta/pintura/add",
+    status_code=status.HTTP_200_OK,
+    response_model=schemas.CamisetaSchema,
+)
+async def create_camiseta_pintura_add(payload: schemas.CreateCamisetaSchema):
+    result = await usecase.create_camiseta_usecase.CreateCamisetaUseCase(payload).execute()
+    return result
+"""
+
 @router.get(
     "/camiseta/{id}",
     status_code=status.HTTP_200_OK,

@@ -13,10 +13,9 @@ class CreateOrcamentoUseCase:
         self._pydantic_model = pydantic_model_creator(OrcamentoModel)
 
     async def validate(self):
-        """
-        Checks if there is already a record in the database with the same name and gender values
-        :return: None
-        """
+        """Checks if there is already a record in the database with the same name and gender values
+        :return: None"""
+
         orcamento = await self._repository.get_or_none(
             service=self._payload.service, value=self._payload.value,
 

@@ -5,11 +5,13 @@ from tortoise import fields
 class PinturaModel(Model):
     id = fields.BigIntField(pk=True)
     img_url = fields.CharField(max_length=50)
-    size_painting = fields.IntField
-    value_colors = fields.FloatField
+    size_painting = fields.IntField()
+    value_colors = fields.FloatField()
+
     orcamento = fields.ForeignKeyField(
-        "models.OrcamentoModel",
-        "pintura",
+        model_name="models.OrcamentoModel",
+        related_name="pintura",
+        null=True
     )
 
     cor = fields.ManyToManyField(model_name="models.CorModel",

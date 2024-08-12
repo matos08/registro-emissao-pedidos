@@ -1,9 +1,8 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 from fastapi_camelcase import CamelModel
 
-from app.modules.orcamento.schemas import OrcamentoSchema
 from app.modules.pintura.schemas import PinturaSchema
 
 
@@ -13,12 +12,19 @@ class CamisetaSchema(CamelModel):
     type_cloth: str
     type_shirt: str
     color_cloth: str
+    quantity: int
 
     created_at: datetime
     updated_at: datetime
 
-    orcamento: Optional[OrcamentoSchema]
-    pintura: Optional[PinturaSchema]
-
     class Config:
         orm_mode = True
+
+
+class AddCamisetaPinturasSchema(CamelModel):
+    camisete_id: int
+    pinturas: List[int]
+
+
+class CamisetaPinturasSchema(CamisetaSchema):
+    pintura: Optional[PinturaSchema]
